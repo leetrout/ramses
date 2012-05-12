@@ -1,0 +1,12 @@
+[
+    {
+        "pk": 1, 
+        "model": "stats.entity", 
+        "fields": {
+            "date_created": "2012-05-12T19:16:03.196Z", 
+            "slug": "UNKOWN", 
+            "name": "UNKOWN", 
+            "date_modified": "2012-05-12T19:16:03.196Z"
+        }
+    }
+]

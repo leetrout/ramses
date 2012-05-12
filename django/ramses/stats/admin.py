@@ -7,7 +7,7 @@ class TeamAdmin(admin.ModelAdmin):
     prepopulated_fields = {
         "slug": ("name",)
     }
-    fields = ('name', 'slug', 'mascot')
+    fields = ('entity', 'sport', 'name', 'slug', 'mascot')
 
 
 class PlayerAdmin(admin.ModelAdmin):
@@ -25,3 +25,4 @@ class SportAdmin(admin.ModelAdmin):
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Player, PlayerAdmin)
 admin.site.register(Sport, SportAdmin)
+admin.site.register(Entity)

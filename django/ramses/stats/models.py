@@ -1,13 +1,30 @@
 from django.db import models
 
-class Team(models.Model):
+
+class DatesBaseModel(models.Model):
+    """Abstract base class to provide date fields."""
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        abstract = True
+
+
+class SlugBaseModel(models.Model):
+    """Abstract base class for models with slugs"""
+    slug = models.SlugField()
+    
+    class Meta:
+        abstract = True
+
+
+class Team(DatesBaseModel, SlugBaseModel):
     """A basic model that represents a sports team."""
     name = models.CharField(max_length=100)
     mascot = models.CharField(max_length=100, blank=True, null=True)
-    slug = models.SlugField()
     
     
-class Player(models.Model):
+class Player(DatesBaseModel):
     """A basic model that represents a player."""
     last_name = models.CharField(max_length=100)
     first_name = models.CharField(max_length=100)
@@ -15,7 +32,7 @@ class Player(models.Model):
     slug = models.SlugField()
 
 
-class Sport(models.Model):
+class Sport(DatesBaseModel):
     """A basic model that represents a sport."""
     name = models.CharField(max_length=100)
     slug = models.SlugField()

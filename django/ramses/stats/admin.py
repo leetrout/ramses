@@ -13,7 +13,7 @@ class TeamAdmin(admin.ModelAdmin):
 class PlayerAdmin(admin.ModelAdmin):
     """Adds slugify options to player admin form."""
     prepopulated_fields = {
-        "slug": ("last_name", "first_name",)
+        "slug": ("first_name", "last_name")
     }
     fields = ('team', 'first_name', 'last_name', 'slug')
 

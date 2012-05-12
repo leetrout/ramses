@@ -7,6 +7,7 @@ class TeamAdmin(admin.ModelAdmin):
     prepopulated_fields = {
         "slug": ("name",)
     }
+    fields = ('name', 'slug', 'mascot')
 
 
 admin.site.register(Team, TeamAdmin)

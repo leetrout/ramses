@@ -23,6 +23,9 @@ class Team(DatesBaseModel, SlugBaseModel):
     name = models.CharField(max_length=100)
     mascot = models.CharField(max_length=100, blank=True, null=True)
     
+    def __unicode__(self):
+        return self.name
+    
     
 class Player(DatesBaseModel):
     """A basic model that represents a player."""
@@ -30,6 +33,9 @@ class Player(DatesBaseModel):
     first_name = models.CharField(max_length=100)
     team = models.ForeignKey("Team", related_name="players")
     slug = models.SlugField()
+    
+    def __unicode__(self):
+        return "%s, %s" % (self.last_name, self.first_name)
 
 
 class Sport(DatesBaseModel):

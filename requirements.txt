@@ -1,0 +1,7 @@
+Django==1.4
+Pygments==1.5
+bpython==0.11
+ipython==0.12.1
+psycopg2==2.4.5
+readline==6.2.2
+wsgiref==0.1.2

@@ -18,6 +18,10 @@ class PlayerAdmin(admin.ModelAdmin):
     fields = ('team', 'first_name', 'last_name', 'slug')
 
 
+class SportAdmin(admin.ModelAdmin):
+    pass
+
+
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Player, PlayerAdmin)
-admin.site.register(Sport)
+admin.site.register(Sport, SportAdmin)

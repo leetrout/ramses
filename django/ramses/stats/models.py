@@ -37,7 +37,7 @@ class Player(DatesBaseModel):
     slug = models.SlugField()
     
     def __unicode__(self):
-        return "%s, %s %s" % (self.last_name, self.first_name)
+        return "%s, %s" % (self.last_name, self.first_name)
 
 
 class Sport(DatesBaseModel):
